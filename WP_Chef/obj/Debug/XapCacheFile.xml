@@ -1,12 +1,12 @@
-﻿<xapCache source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Bin\Debug\WP_Chef_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="14/11/2015 06:23:21 p. m.">
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\obj\Debug\WP_Chef.dll" archivePath="WP_Chef.dll" lastWriteTime="14/11/2015 06:23:21 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="14/11/2015 06:23:21 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
-  <file source="D:\Cliente-serv\3Parcial\BeSmart\WP_Chef\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="14/11/2015 06:23:21 p. m." />
+﻿<xapCache source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Bin\Debug\WP_Chef_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="15/11/2015 04:20:53 p. m.">
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\obj\Debug\WP_Chef.dll" archivePath="WP_Chef.dll" lastWriteTime="15/11/2015 04:20:53 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="14/11/2015 06:23:21 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="14/11/2015 06:23:19 p. m." />
+  <file source="D:\Cliente-serv\3Parcial\BeSmart\BESMART\WP_Chef\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="14/11/2015 06:23:21 p. m." />
 </xapCache>

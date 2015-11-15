@@ -16,7 +16,10 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="nusoap.php" />
+    <Compile Include="lib\nusoap.php" />
     <Compile Include="service.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
   </ItemGroup>
 </Project>
