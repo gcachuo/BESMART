@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movil", "Movil", "{EB4E1466-C102-4AE1-B711-94B4D97E276B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicio-Web", "Servicio-Web", "{345E68B9-FDBF-4C35-9D9E-56DA3C159346}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumidor-Web", "Consumidor-Web", "{42818CBB-05DA-45E2-8139-ACC4B2C471AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Phone", "Windows Phone", "{19AE4122-CD01-4C29-898C-A05FC24BA8D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP_Chef", "WP_Chef\WP_Chef.csproj", "{ABE71C92-B253-4B68-B459-F19D78DCD529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP_Menu", "WP_Menu\WP_Menu.csproj", "{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}"
+EndProject
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "PHP_WebService", "PHP_WebService\PHP_WebService.phpproj", "{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASP_WebConsum", "http://localhost:4864", "{679644EE-B450-4A48-8664-37D040B5F64D}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4864"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\ASP_WebConsum\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4864\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4864"
+		Release.AspNetCompiler.PhysicalPath = "..\..\ASP_WebConsum\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4864\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\ASP_WebConsum\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|ARM.ActiveCfg = Debug|ARM
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|ARM.Build.0 = Debug|ARM
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|ARM.Deploy.0 = Debug|ARM
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|x86.ActiveCfg = Debug|x86
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|x86.Build.0 = Debug|x86
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Debug|x86.Deploy.0 = Debug|x86
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|ARM.ActiveCfg = Release|ARM
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|ARM.Build.0 = Release|ARM
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|ARM.Deploy.0 = Release|ARM
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|x86.ActiveCfg = Release|x86
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|x86.Build.0 = Release|x86
+		{ABE71C92-B253-4B68-B459-F19D78DCD529}.Release|x86.Deploy.0 = Release|x86
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|ARM.ActiveCfg = Debug|ARM
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|ARM.Build.0 = Debug|ARM
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|ARM.Deploy.0 = Debug|ARM
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|x86.ActiveCfg = Debug|x86
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|x86.Build.0 = Debug|x86
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Debug|x86.Deploy.0 = Debug|x86
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|ARM.ActiveCfg = Release|ARM
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|ARM.Build.0 = Release|ARM
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|ARM.Deploy.0 = Release|ARM
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|x86.ActiveCfg = Release|x86
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|x86.Build.0 = Release|x86
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F}.Release|x86.Deploy.0 = Release|x86
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Release|ARM.ActiveCfg = Release|Any CPU
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2}.Release|x86.ActiveCfg = Release|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Release|ARM.ActiveCfg = Debug|Any CPU
+		{679644EE-B450-4A48-8664-37D040B5F64D}.Release|x86.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19AE4122-CD01-4C29-898C-A05FC24BA8D0} = {EB4E1466-C102-4AE1-B711-94B4D97E276B}
+		{01C52198-E5C1-4F58-B15C-0AEA26CE05B2} = {345E68B9-FDBF-4C35-9D9E-56DA3C159346}
+		{679644EE-B450-4A48-8664-37D040B5F64D} = {42818CBB-05DA-45E2-8139-ACC4B2C471AC}
+		{ABE71C92-B253-4B68-B459-F19D78DCD529} = {19AE4122-CD01-4C29-898C-A05FC24BA8D0}
+		{17F2AB52-F7B2-4E2B-9836-F1972DA24F7F} = {19AE4122-CD01-4C29-898C-A05FC24BA8D0}
+	EndGlobalSection
+EndGlobal
