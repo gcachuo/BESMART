@@ -16,7 +16,7 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="index.php" />
     <Compile Include="nusoap.php" />
+    <Compile Include="service.php" />
   </ItemGroup>
 </Project>
