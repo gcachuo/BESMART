@@ -7,11 +7,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movil", "Movil", "{EB4E1466
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Phone", "Windows Phone", "{19AE4122-CD01-4C29-898C-A05FC24BA8D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinQ", "LinQ", "{21F7BC52-FE6E-469E-93B4-F5368740F25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQLibrary", "LinQLibrary\LinQLibrary.csproj", "{E90D503F-EB22-411A-B3EC-80862321BEAE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{19AE4122-CD01-4C29-898C-A05FC24BA8D0} = {EB4E1466-C102-4AE1-B711-94B4D97E276B}
+		{E90D503F-EB22-411A-B3EC-80862321BEAE} = {21F7BC52-FE6E-469E-93B4-F5368740F25D}
 	EndGlobalSection
 EndGlobal

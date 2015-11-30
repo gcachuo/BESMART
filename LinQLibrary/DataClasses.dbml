@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Restaurante" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MIPC\PAULINASERVER;Initial Catalog=Restaurante;Integrated Security=True" SettingsObjectName="LinQLibrary.Properties.Settings" SettingsPropertyName="RestauranteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="category_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="category_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Dish_Category" Member="Dish" ThisKey="category_id" OtherKey="category_id" Type="Dish" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dish" Member="Dishes">
+    <Type Name="Dish">
+      <Column Name="id_dish" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name_dish" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description_dish" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="image_dish" Type="System.String" DbType="VarChar(700)" CanBeNull="true" />
+      <Column Name="cost_dish" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="status_dish" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="category_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Dish_Category" Member="Categories" ThisKey="category_id" OtherKey="category_id" Type="Category" />
+      <Association Name="Order_Dish_Dish" Member="Order_Dish" ThisKey="id_dish" OtherKey="id_dish" Type="Order_Dish" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="id_ord" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_ord" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="qualification_ord" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Order_Dish" Member="Order_Dishes" ThisKey="id_ord" OtherKey="id_ord" Type="Order_Dish" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Order_Dish" Member="Order_Dishes">
+    <Type Name="Order_Dish">
+      <Column Name="id_orddish" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_ord" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_dish" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="n_orddish" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_orddish" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Dish_Dish" Member="Dishes" ThisKey="id_dish" OtherKey="id_dish" Type="Dish" />
+      <Association Name="Order_Order_Dish" Member="Order" ThisKey="id_ord" OtherKey="id_ord" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
