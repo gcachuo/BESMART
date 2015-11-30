@@ -13,50 +13,69 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
-
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="nombre de la página" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
         </Grid>
+        <Grid x:Name="LayoutRoot_Copy" Grid.RowSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF19816" Offset="0"/>
+                    <GradientStop Color="#FF6BB6CC" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="319*"/>
+                <ColumnDefinition Width="161*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
+            <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+            <StackPanel Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
+                <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Height="104" Text="Comida"/>
+                <Image Height="100" Source="/Images/Platillos.png" HorizontalAlignment="Right" Margin="100,0,10,0"/>
+            </StackPanel>
 
-            Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+            <!--ContentPanel. Colocar aquí el contenido adicional-->
+            <Grid x:Name="ContentPanel1" Grid.Row="1" Margin="12,0,12,0" Grid.ColumnSpan="2">
+                <Image HorizontalAlignment="Left" Height="100" Margin="10,165,0,0" VerticalAlignment="Top" Width="100" Source="/Images/Postres.png"/>
+                <Image HorizontalAlignment="Left" Height="100" Margin="10,310,0,0" VerticalAlignment="Top" Width="100" Source="/Images/Platillos.png"/>
+                <Image HorizontalAlignment="Left" Height="100" Margin="10,26,0,0" VerticalAlignment="Top" Width="100" Source="/Images/Platillos.png"/>
+                <TextBlock HorizontalAlignment="Left" Margin="149,26,0,0" TextWrapping="Wrap" Text="Enchiladas" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="149,165,0,0" TextWrapping="Wrap" Text="Pie" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="149,310,0,0" TextWrapping="Wrap" Text="Mole" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="345,26,0,0" TextWrapping="Wrap" Text="$00.00" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="345,165,0,0" TextWrapping="Wrap" Text="$00.00" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="345,310,0,0" TextWrapping="Wrap" Text="$00.00" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="149,58,0,0" TextWrapping="Wrap" Text="De pollo, de papa" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="149,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                	<Run Text="De queso, de fresa, de limon"/>
+                	<LineBreak/>
+                	<Run/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="149,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                	<Run Text="Poblano, verde Oaxaqueno"/>
+                	<LineBreak/>
+                	<Run/>
+                </TextBlock>
+
+            </Grid>
+        </Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>
