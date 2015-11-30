@@ -34,6 +34,7 @@ namespace WP_Chef
 
             // Language display initialization
             InitializeLanguage();
+            //ya modifique ahora que
 
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)
