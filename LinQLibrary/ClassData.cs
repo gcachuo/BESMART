@@ -14,7 +14,7 @@ namespace LinQLibrary
             try
             {
                 var menu =
-                    dcdc.Dishes.OrderBy(main => main.priority_dish).Where(main => main.status_dish == '1').ToList();
+                    dcdc.Dishes.OrderBy(main => main.priority_dish).Where(main => main.status_dish == '5').ToList();
                 return menu;
             }
             catch (Exception)
@@ -44,7 +44,7 @@ namespace LinQLibrary
                     platosJoin.Add(p);
                 }
                 var OrdenadaPlatos =
-                    platosJoin.OrderBy(pj => pj.priority_dish).Where(pj => pj.status_dish == '1').ToList();
+                    platosJoin.OrderBy(pj => pj.priority_dish).Where(pj => pj.status_dish == '5').ToList();
                 return OrdenadaPlatos;
             }
             catch (Exception)
