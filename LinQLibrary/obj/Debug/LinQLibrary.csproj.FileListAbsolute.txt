@@ -1,0 +1,6 @@
+D:\Cliente-serv\3Parcial\BeSmart\BESMART\LinQLibrary\bin\Debug\LinQLibrary.dll.config
+D:\Cliente-serv\3Parcial\BeSmart\BESMART\LinQLibrary\bin\Debug\LinQLibrary.dll
+D:\Cliente-serv\3Parcial\BeSmart\BESMART\LinQLibrary\bin\Debug\LinQLibrary.pdb
+D:\Cliente-serv\3Parcial\BeSmart\BESMART\LinQLibrary\obj\Debug\LinQLibrary.csprojResolveAssemblyReference.cache
+D:\Cliente-serv\3Parcial\BeSmart\BESMART\LinQLibrary\obj\Debug\LinQLibrary.dll
+D:\Cliente-serv\3Parcial\BeSmart\BESMART\LinQLibrary\obj\Debug\LinQLibrary.pdb
