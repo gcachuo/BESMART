@@ -9,16 +9,22 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,0,2,0">
             <Grid Height="100" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="579">
-                <Image x:Name="image" Margin="25,1,0,-1" d:LayoutOverrides="TopPosition, BottomPosition" HorizontalAlignment="Left" Width="100" Source="img/2153-sims2_podcast.jpg" Grid.Column="1"/>
-                <Image x:Name="image_Copy" Margin="134,1,0,-1" HorizontalAlignment="Left" Width="100" d:LayoutOverrides="TopPosition, BottomPosition" Source="img/Bp05-8qIQAAaLeD.jpg" Grid.Column="2"/>
-                <Image x:Name="image_Copy1" Margin="250,1,229,-1" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Source="img/Captura de pantalla 2014-06-10 12.13.33.png"/>
-                <Image x:Name="image_Copy2" Margin="0,1,123,-1" d:LayoutOverrides="TopPosition, BottomPosition" HorizontalAlignment="Right" Width="100" Source="img/descarga.jpg" Grid.Column="4"/>
-                <Image x:Name="image_Copy3" Margin="0,1,11,-1" HorizontalAlignment="Right" Width="100" d:LayoutOverrides="TopPosition, BottomPosition"/>
-                <Image x:Name="image_Copy4" Margin="0,1,7,-1" HorizontalAlignment="Right" Width="100" Source="img/ET-The-Atari-Game.jpg" d:LayoutOverrides="TopPosition, BottomPosition" Grid.Column="5"/>
+                <Image x:Name="image" Margin="3,1,0,-1" d:LayoutOverrides="TopPosition, BottomPosition" HorizontalAlignment="Left" Width="100" Source="Assets/Logo.png"/>
+                <Image x:Name="image_Copy" Margin="112,1,0,-1" HorizontalAlignment="Left" Width="100" d:LayoutOverrides="TopPosition, BottomPosition" Source="Assets/Logo.png"/>
+                <Image x:Name="image_Copy1" Margin="220,1,259,-1" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Source="Assets/Logo.png"/>
+                <Image x:Name="image_Copy2" Margin="0,1,151,-1" d:LayoutOverrides="TopPosition, BottomPosition" HorizontalAlignment="Right" Width="100" Source="Assets/Logo.png"/>
+                <Image x:Name="image_Copy4" Margin="0,1,43,-1" HorizontalAlignment="Right" Width="100" Source="Assets/Logo.png" d:LayoutOverrides="TopPosition, BottomPosition"/>
             </Grid>
         </ScrollViewer>
+        <Grid Height="85" Margin="-2,0,2,1" VerticalAlignment="Bottom" d:LayoutOverrides="LeftPosition, RightPosition" Width="400">
+            <Image x:Name="image1" HorizontalAlignment="Left" Margin="1,3,0,0" Width="80" Height="82" Source="Assets/Logo.png"/>
+            <Image x:Name="image1_Copy" Margin="80,3,0,0" Height="82" Width="80" HorizontalAlignment="Left" Source="Assets/Logo.png"/>
+            <Image x:Name="image1_Copy1" Margin="160,3,160,0" d:LayoutOverrides="TopPosition, BottomPosition" Width="80" Source="Assets/Logo.png"/>
+            <Image x:Name="image1_Copy2" Margin="0,3,79,0" d:LayoutOverrides="TopPosition, BottomPosition" HorizontalAlignment="Right" Width="80" Source="Assets/Logo.png"/>
+            <Image x:Name="image1_Copy3" Margin="0,3,-3,0" HorizontalAlignment="Right" Width="80" d:LayoutOverrides="TopPosition, BottomPosition" Source="Assets/Logo.png"/>
+        </Grid>
 
     </Grid>
 </Page>
