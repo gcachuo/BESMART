@@ -5,16 +5,16 @@ using System.Linq;
 
 namespace LinQLibrary
 {
-   public class ClassData
+    public class ClassData
     {
-        DataClassesDataContext dcdc=new DataClassesDataContext();
+        private DataClassesDataContext dcdc = new DataClassesDataContext();
 
         public List<Dish> Select_Menu()
         {
             try
             {
                 var menu =
-                dcdc.Dishes.OrderBy(main => main.priority_dish).Where(main => main.status_dish == '1').ToList();
+                    dcdc.Dishes.OrderBy(main => main.priority_dish).Where(main => main.status_dish == '1').ToList();
                 return menu;
             }
             catch (Exception)
@@ -29,42 +29,51 @@ namespace LinQLibrary
             try
             {
                 var categoriaPlato = (from ctg in dcdc.Relations
-                                      where ctg.id_dish == id_dish
-                                      select ctg.id_Category).Single();
+                    where ctg.id_dish == id_dish
+                    select ctg.id_Category).Single();
 
                 var idPlatosRelacionados = (from pid in dcdc.Relations
-                                            where pid.id_Category == categoriaPlato
-                                            select pid.id_dish).ToList();
+                    where pid.id_Category == categoriaPlato
+                    select pid.id_dish).ToList();
                 List<Dish> platosJoin = new List<Dish>();
                 foreach (var pd in idPlatosRelacionados)
                 {
                     var p = (from plato in dcdc.Dishes
-                             where plato.id_dish == pd
-                             select plato).Single();
+                        where plato.id_dish == pd
+                        select plato).Single();
                     platosJoin.Add(p);
                 }
-                var OrdenadaPlatos = platosJoin.OrderBy(pj => pj.priority_dish).Where(pj => pj.status_dish == '1').ToList();
+                var OrdenadaPlatos =
+                    platosJoin.OrderBy(pj => pj.priority_dish).Where(pj => pj.status_dish == '1').ToList();
                 return OrdenadaPlatos;
             }
             catch (Exception)
             {
-                return  new List<Dish>();
-            }             
+                return new List<Dish>();
+            }
 
         }
 
-       public bool InsertOrder()
-       {
-           test t = new test
-           {
-               id = Guid.NewGuid().ToString(),
-               name = TextBox1.Text,
-               @class = TextBox2.Text
-           };
-           dh.tests.InsertOnSubmit(t);
-           dh.SubmitChanges();
-           gridview();
+        public bool InsertOrder(List<int> idplatos, Order order)
+        {
+            try
+            {
+                dcdc.Orders.InsertOnSubmit(order);
+                dcdc.SubmitChanges();
+                var s = (from data in dcdc.Orders select data.id_ord).Last();
+                foreach (int idp in idplatos)
+                {
+                    var od = new Order_Dish {id_ord = s, id_dish = idp, status_orddish = '0'};
 
-       } 
+                    dcdc.Order_Dishes.InsertOnSubmit(od);
+                    dcdc.SubmitChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
