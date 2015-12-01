@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace LinQLibrary
 {
-    class ClassData
+   public class ClassData
     {
         DataClassesDataContext dcdc=new DataClassesDataContext();
 
@@ -24,12 +24,12 @@ namespace LinQLibrary
 
         }
 
-        public List<Dish> Select_PlatosRelacionados(Dish dish)
+        public List<Dish> Select_PlatosRelacionados(int id_dish)
         {
             try
             {
                 var categoriaPlato = (from ctg in dcdc.Relations
-                                      where ctg.id_dish == dish.id_dish
+                                      where ctg.id_dish == id_dish
                                       select ctg.id_Category).Single();
 
                 var idPlatosRelacionados = (from pid in dcdc.Relations
