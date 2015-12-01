@@ -11,7 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinQ", "LinQ", "{21F7BC52-F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQLibrary", "LinQLibrary\LinQLibrary.csproj", "{E90D503F-EB22-411A-B3EC-80862321BEAE}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders", "Orders\Orders.csproj", "{9A190257-252A-44C1-9EA5-9BE9059D6EA8}"
+=======
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{66744825-B8A4-491D-9326-8F28D3D26143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication", "WindowsFormsApplication\WindowsFormsApplication.csproj", "{551E2847-FC9D-4262-BC16-76D70155EEA9}"
+>>>>>>> b019a36691fd58145aa03db3288c4ea548e37432
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +36,7 @@ Global
 		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Debug|x86.Build.0 = Debug|Any CPU
 		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|ARM.ActiveCfg = Release|Any CPU
 		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|ARM.Build.0 = Release|Any CPU
 		{E90D503F-EB22-411A-B3EC-80862321BEAE}.Release|x86.ActiveCfg = Release|Any CPU
@@ -52,6 +59,12 @@ Global
 		{9A190257-252A-44C1-9EA5-9BE9059D6EA8}.Release|x86.ActiveCfg = Release|x86
 		{9A190257-252A-44C1-9EA5-9BE9059D6EA8}.Release|x86.Build.0 = Release|x86
 		{9A190257-252A-44C1-9EA5-9BE9059D6EA8}.Release|x86.Deploy.0 = Release|x86
+=======
+		{551E2847-FC9D-4262-BC16-76D70155EEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551E2847-FC9D-4262-BC16-76D70155EEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551E2847-FC9D-4262-BC16-76D70155EEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551E2847-FC9D-4262-BC16-76D70155EEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> b019a36691fd58145aa03db3288c4ea548e37432
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +72,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{19AE4122-CD01-4C29-898C-A05FC24BA8D0} = {EB4E1466-C102-4AE1-B711-94B4D97E276B}
 		{E90D503F-EB22-411A-B3EC-80862321BEAE} = {21F7BC52-FE6E-469E-93B4-F5368740F25D}
+<<<<<<< HEAD
 		{9A190257-252A-44C1-9EA5-9BE9059D6EA8} = {19AE4122-CD01-4C29-898C-A05FC24BA8D0}
+=======
+		{551E2847-FC9D-4262-BC16-76D70155EEA9} = {66744825-B8A4-491D-9326-8F28D3D26143}
+>>>>>>> b019a36691fd58145aa03db3288c4ea548e37432
 	EndGlobalSection
 EndGlobal
