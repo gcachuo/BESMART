@@ -36,12 +36,6 @@ namespace LinQLibrary
     partial void InsertDish(Dish instance);
     partial void UpdateDish(Dish instance);
     partial void DeleteDish(Dish instance);
-    partial void InsertOrder(Order instance);
-    partial void UpdateOrder(Order instance);
-    partial void DeleteOrder(Order instance);
-    partial void InsertOrder_Dish(Order_Dish instance);
-    partial void UpdateOrder_Dish(Order_Dish instance);
-    partial void DeleteOrder_Dish(Order_Dish instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -90,19 +84,11 @@ namespace LinQLibrary
 			}
 		}
 		
-		public System.Data.Linq.Table<Order> Orders
+		public System.Data.Linq.Table<Relation> Relations
 		{
 			get
 			{
-				return this.GetTable<Order>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Order_Dish> Order_Dishes
-		{
-			get
-			{
-				return this.GetTable<Order_Dish>();
+				return this.GetTable<Relation>();
 			}
 		}
 	}
@@ -117,8 +103,6 @@ namespace LinQLibrary
 		
 		private string _category_name;
 		
-		private EntityRef<Dish> _Dish;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -131,7 +115,6 @@ namespace LinQLibrary
 		
 		public Category()
 		{
-			this._Dish = default(EntityRef<Dish>);
 			OnCreated();
 		}
 		
@@ -146,10 +129,6 @@ namespace LinQLibrary
 			{
 				if ((this._category_id != value))
 				{
-					if (this._Dish.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncategory_idChanging(value);
 					this.SendPropertyChanging();
 					this._category_id = value;
@@ -175,40 +154,6 @@ namespace LinQLibrary
 					this._category_name = value;
 					this.SendPropertyChanged("category_name");
 					this.Oncategory_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Dish_Category", Storage="_Dish", ThisKey="category_id", OtherKey="category_id", IsForeignKey=true)]
-		public Dish Dish
-		{
-			get
-			{
-				return this._Dish.Entity;
-			}
-			set
-			{
-				Dish previousValue = this._Dish.Entity;
-				if (((previousValue != value) 
-							|| (this._Dish.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Dish.Entity = null;
-						previousValue.Categories.Remove(this);
-					}
-					this._Dish.Entity = value;
-					if ((value != null))
-					{
-						value.Categories.Add(this);
-						this._category_id = value.category_id;
-					}
-					else
-					{
-						this._category_id = default(int);
-					}
-					this.SendPropertyChanged("Dish");
 				}
 			}
 		}
@@ -252,11 +197,7 @@ namespace LinQLibrary
 		
 		private char _status_dish;
 		
-		private int _category_id;
-		
-		private EntitySet<Category> _Categories;
-		
-		private EntityRef<Order_Dish> _Order_Dish;
+		private short _priority_dish;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -274,14 +215,12 @@ namespace LinQLibrary
     partial void Oncost_dishChanged();
     partial void Onstatus_dishChanging(char value);
     partial void Onstatus_dishChanged();
-    partial void Oncategory_idChanging(int value);
-    partial void Oncategory_idChanged();
+    partial void Onpriority_dishChanging(short value);
+    partial void Onpriority_dishChanged();
     #endregion
 		
 		public Dish()
 		{
-			this._Categories = new EntitySet<Category>(new Action<Category>(this.attach_Categories), new Action<Category>(this.detach_Categories));
-			this._Order_Dish = default(EntityRef<Order_Dish>);
 			OnCreated();
 		}
 		
@@ -296,10 +235,6 @@ namespace LinQLibrary
 			{
 				if ((this._id_dish != value))
 				{
-					if (this._Order_Dish.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onid_dishChanging(value);
 					this.SendPropertyChanging();
 					this._id_dish = value;
@@ -409,69 +344,22 @@ namespace LinQLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category_id", DbType="Int NOT NULL")]
-		public int category_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_priority_dish", DbType="SmallInt NOT NULL")]
+		public short priority_dish
 		{
 			get
 			{
-				return this._category_id;
+				return this._priority_dish;
 			}
 			set
 			{
-				if ((this._category_id != value))
+				if ((this._priority_dish != value))
 				{
-					this.Oncategory_idChanging(value);
+					this.Onpriority_dishChanging(value);
 					this.SendPropertyChanging();
-					this._category_id = value;
-					this.SendPropertyChanged("category_id");
-					this.Oncategory_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Dish_Category", Storage="_Categories", ThisKey="category_id", OtherKey="category_id")]
-		public EntitySet<Category> Categories
-		{
-			get
-			{
-				return this._Categories;
-			}
-			set
-			{
-				this._Categories.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Dish_Dish", Storage="_Order_Dish", ThisKey="id_dish", OtherKey="id_dish", IsForeignKey=true)]
-		public Order_Dish Order_Dish
-		{
-			get
-			{
-				return this._Order_Dish.Entity;
-			}
-			set
-			{
-				Order_Dish previousValue = this._Order_Dish.Entity;
-				if (((previousValue != value) 
-							|| (this._Order_Dish.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Order_Dish.Entity = null;
-						previousValue.Dishes.Remove(this);
-					}
-					this._Order_Dish.Entity = value;
-					if ((value != null))
-					{
-						value.Dishes.Add(this);
-						this._id_dish = value.id_dish;
-					}
-					else
-					{
-						this._id_dish = default(int);
-					}
-					this.SendPropertyChanged("Order_Dish");
+					this._priority_dish = value;
+					this.SendPropertyChanged("priority_dish");
+					this.Onpriority_dishChanged();
 				}
 			}
 		}
@@ -495,241 +383,34 @@ namespace LinQLibrary
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Categories(Category entity)
-		{
-			this.SendPropertyChanging();
-			entity.Dish = this;
-		}
-		
-		private void detach_Categories(Category entity)
-		{
-			this.SendPropertyChanging();
-			entity.Dish = null;
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Order]")]
-	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Relation")]
+	public partial class Relation
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_ord;
-		
-		private System.DateTime _date_ord;
-		
-		private char _qualification_ord;
-		
-		private EntitySet<Order_Dish> _Order_Dishes;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_ordChanging(int value);
-    partial void Onid_ordChanged();
-    partial void Ondate_ordChanging(System.DateTime value);
-    partial void Ondate_ordChanged();
-    partial void Onqualification_ordChanging(char value);
-    partial void Onqualification_ordChanged();
-    #endregion
-		
-		public Order()
-		{
-			this._Order_Dishes = new EntitySet<Order_Dish>(new Action<Order_Dish>(this.attach_Order_Dishes), new Action<Order_Dish>(this.detach_Order_Dishes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ord", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_ord
-		{
-			get
-			{
-				return this._id_ord;
-			}
-			set
-			{
-				if ((this._id_ord != value))
-				{
-					this.Onid_ordChanging(value);
-					this.SendPropertyChanging();
-					this._id_ord = value;
-					this.SendPropertyChanged("id_ord");
-					this.Onid_ordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_ord", DbType="DateTime NOT NULL")]
-		public System.DateTime date_ord
-		{
-			get
-			{
-				return this._date_ord;
-			}
-			set
-			{
-				if ((this._date_ord != value))
-				{
-					this.Ondate_ordChanging(value);
-					this.SendPropertyChanging();
-					this._date_ord = value;
-					this.SendPropertyChanged("date_ord");
-					this.Ondate_ordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qualification_ord", DbType="Char(1) NOT NULL")]
-		public char qualification_ord
-		{
-			get
-			{
-				return this._qualification_ord;
-			}
-			set
-			{
-				if ((this._qualification_ord != value))
-				{
-					this.Onqualification_ordChanging(value);
-					this.SendPropertyChanging();
-					this._qualification_ord = value;
-					this.SendPropertyChanged("qualification_ord");
-					this.Onqualification_ordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Order_Dish", Storage="_Order_Dishes", ThisKey="id_ord", OtherKey="id_ord")]
-		public EntitySet<Order_Dish> Order_Dishes
-		{
-			get
-			{
-				return this._Order_Dishes;
-			}
-			set
-			{
-				this._Order_Dishes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Order_Dishes(Order_Dish entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order = this;
-		}
-		
-		private void detach_Order_Dishes(Order_Dish entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Order_Dish")]
-	public partial class Order_Dish : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_orddish;
-		
-		private int _id_ord;
+		private int _id_relation;
 		
 		private int _id_dish;
 		
-		private int _n_orddish;
+		private int _id_Category;
 		
-		private char _status_orddish;
-		
-		private EntitySet<Dish> _Dishes;
-		
-		private EntityRef<Order> _Order;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_orddishChanging(int value);
-    partial void Onid_orddishChanged();
-    partial void Onid_ordChanging(int value);
-    partial void Onid_ordChanged();
-    partial void Onid_dishChanging(int value);
-    partial void Onid_dishChanged();
-    partial void Onn_orddishChanging(int value);
-    partial void Onn_orddishChanged();
-    partial void Onstatus_orddishChanging(char value);
-    partial void Onstatus_orddishChanged();
-    #endregion
-		
-		public Order_Dish()
+		public Relation()
 		{
-			this._Dishes = new EntitySet<Dish>(new Action<Dish>(this.attach_Dishes), new Action<Dish>(this.detach_Dishes));
-			this._Order = default(EntityRef<Order>);
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_orddish", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_orddish
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_relation", DbType="Int NOT NULL")]
+		public int id_relation
 		{
 			get
 			{
-				return this._id_orddish;
+				return this._id_relation;
 			}
 			set
 			{
-				if ((this._id_orddish != value))
+				if ((this._id_relation != value))
 				{
-					this.Onid_orddishChanging(value);
-					this.SendPropertyChanging();
-					this._id_orddish = value;
-					this.SendPropertyChanged("id_orddish");
-					this.Onid_orddishChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ord", DbType="Int NOT NULL")]
-		public int id_ord
-		{
-			get
-			{
-				return this._id_ord;
-			}
-			set
-			{
-				if ((this._id_ord != value))
-				{
-					if (this._Order.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_ordChanging(value);
-					this.SendPropertyChanging();
-					this._id_ord = value;
-					this.SendPropertyChanged("id_ord");
-					this.Onid_ordChanged();
+					this._id_relation = value;
 				}
 			}
 		}
@@ -745,132 +426,25 @@ namespace LinQLibrary
 			{
 				if ((this._id_dish != value))
 				{
-					this.Onid_dishChanging(value);
-					this.SendPropertyChanging();
 					this._id_dish = value;
-					this.SendPropertyChanged("id_dish");
-					this.Onid_dishChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_n_orddish", DbType="Int NOT NULL")]
-		public int n_orddish
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Category", DbType="Int NOT NULL")]
+		public int id_Category
 		{
 			get
 			{
-				return this._n_orddish;
+				return this._id_Category;
 			}
 			set
 			{
-				if ((this._n_orddish != value))
+				if ((this._id_Category != value))
 				{
-					this.Onn_orddishChanging(value);
-					this.SendPropertyChanging();
-					this._n_orddish = value;
-					this.SendPropertyChanged("n_orddish");
-					this.Onn_orddishChanged();
+					this._id_Category = value;
 				}
 			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status_orddish", DbType="Char(1) NOT NULL")]
-		public char status_orddish
-		{
-			get
-			{
-				return this._status_orddish;
-			}
-			set
-			{
-				if ((this._status_orddish != value))
-				{
-					this.Onstatus_orddishChanging(value);
-					this.SendPropertyChanging();
-					this._status_orddish = value;
-					this.SendPropertyChanged("status_orddish");
-					this.Onstatus_orddishChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Dish_Dish", Storage="_Dishes", ThisKey="id_dish", OtherKey="id_dish")]
-		public EntitySet<Dish> Dishes
-		{
-			get
-			{
-				return this._Dishes;
-			}
-			set
-			{
-				this._Dishes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Order_Dish", Storage="_Order", ThisKey="id_ord", OtherKey="id_ord", IsForeignKey=true)]
-		public Order Order
-		{
-			get
-			{
-				return this._Order.Entity;
-			}
-			set
-			{
-				Order previousValue = this._Order.Entity;
-				if (((previousValue != value) 
-							|| (this._Order.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Order.Entity = null;
-						previousValue.Order_Dishes.Remove(this);
-					}
-					this._Order.Entity = value;
-					if ((value != null))
-					{
-						value.Order_Dishes.Add(this);
-						this._id_ord = value.id_ord;
-					}
-					else
-					{
-						this._id_ord = default(int);
-					}
-					this.SendPropertyChanged("Order");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Dishes(Dish entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Dish = this;
-		}
-		
-		private void detach_Dishes(Dish entity)
-		{
-			this.SendPropertyChanging();
-			entity.Order_Dish = null;
 		}
 	}
 }
