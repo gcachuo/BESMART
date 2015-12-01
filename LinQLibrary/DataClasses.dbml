@@ -4,7 +4,7 @@
     <Type Name="Category">
       <Column Name="category_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="category_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Dish_Category" Member="Dish" ThisKey="category_id" OtherKey="category_id" Type="Dish" IsForeignKey="true" />
+      <Association Name="Relation_Category" Member="Relation" ThisKey="category_id" OtherKey="id_Category" Type="Relation" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Dish" Member="Dishes">
@@ -15,28 +15,17 @@
       <Column Name="image_dish" Type="System.String" DbType="VarChar(700)" CanBeNull="true" />
       <Column Name="cost_dish" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="status_dish" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="category_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Dish_Category" Member="Categories" ThisKey="category_id" OtherKey="category_id" Type="Category" />
-      <Association Name="Order_Dish_Dish" Member="Order_Dish" ThisKey="id_dish" OtherKey="id_dish" Type="Order_Dish" IsForeignKey="true" />
+      <Column Name="priority_dish" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Relation_Dish" Member="Relation" ThisKey="id_dish" OtherKey="id_dish" Type="Relation" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[Order]" Member="Orders">
-    <Type Name="Order">
-      <Column Name="id_ord" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="date_ord" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="qualification_ord" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Association Name="Order_Order_Dish" Member="Order_Dishes" ThisKey="id_ord" OtherKey="id_ord" Type="Order_Dish" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Order_Dish" Member="Order_Dishes">
-    <Type Name="Order_Dish">
-      <Column Name="id_orddish" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_ord" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.Relation" Member="Relations">
+    <Type Name="Relation">
+      <Column Name="id_relation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_dish" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="n_orddish" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="status_orddish" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Association Name="Order_Dish_Dish" Member="Dishes" ThisKey="id_dish" OtherKey="id_dish" Type="Dish" />
-      <Association Name="Order_Order_Dish" Member="Order" ThisKey="id_ord" OtherKey="id_ord" Type="Order" IsForeignKey="true" />
+      <Column Name="id_Category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Relation_Dish" Member="Dishes" ThisKey="id_dish" OtherKey="id_dish" Type="Dish" />
+      <Association Name="Relation_Category" Member="Categories" ThisKey="id_Category" OtherKey="category_id" Type="Category" />
     </Type>
   </Table>
 </Database>
