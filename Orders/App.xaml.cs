@@ -1,48 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla Aplicación vacía está documentada en http://go.microsoft.com/fwlink/?LinkId=391641
-
 namespace Orders
 {
-    /// <summary>
-    /// Proporciona un comportamiento específico de la aplicación para complementar la clase Application predeterminada.
-    /// </summary>
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
-
-        /// <summary>
-        /// Inicializa el objeto de aplicación Singleton.  Esta es la primera línea de código creado
-        /// ejecutado y, como tal, es el equivalente lógico de main() o WinMain().
-        /// </summary>
+        
         public App()
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
         }
-
-        /// <summary>
-        /// Se invoca cuando la aplicación la inicia normalmente el usuario final. Se usarán otros puntos
-        /// de entrada cuando la aplicación se inicie para abrir un archivo específico, para mostrar
-        /// resultados de la búsqueda, etc.
-        /// </summary>
-        /// <param name="e">Información detallada acerca de la solicitud y el proceso de inicio.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
@@ -53,9 +27,7 @@ namespace Orders
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;
-
-            // No repetir la inicialización de la aplicación si la ventana tiene contenido todavía,
-            // solo asegurarse de que la ventana está activa.
+            
             if (rootFrame == null)
             {
                 // Crear un marco para que actúe como contexto de navegación y navegar a la primera página.

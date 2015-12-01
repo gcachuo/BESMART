@@ -8,6 +8,6 @@ namespace LinQLibrary
     class ClassData
     {
         DataClassesDataContext dcdc=new DataClassesDataContext();
-        public bool 
+        
     }
 }

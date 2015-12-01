@@ -1,0 +1,6 @@
+C:\Users\Memo\Documents\Repos\BeSmart\LinQLibrary\obj\Debug\LinQLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Memo\Documents\Repos\BeSmart\LinQLibrary\bin\Debug\LinQLibrary.dll.config
+C:\Users\Memo\Documents\Repos\BeSmart\LinQLibrary\bin\Debug\LinQLibrary.dll
+C:\Users\Memo\Documents\Repos\BeSmart\LinQLibrary\bin\Debug\LinQLibrary.pdb
+C:\Users\Memo\Documents\Repos\BeSmart\LinQLibrary\obj\Debug\LinQLibrary.dll
+C:\Users\Memo\Documents\Repos\BeSmart\LinQLibrary\obj\Debug\LinQLibrary.pdb
