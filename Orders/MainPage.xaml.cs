@@ -78,8 +78,10 @@ namespace Orders
                         Height = 100,
                         Margin = new Thickness(x, 0, 0, 0),
                         Source = new BitmapImage(new Uri(uri, UriKind.Absolute)),
-                        HorizontalAlignment = HorizontalAlignment.Left
+                        HorizontalAlignment = HorizontalAlignment.Left,
+
                     };
+                    imagen.Tapped += imagenClick;
                     grid1.Children.Add(imagen);
                     x += 105;
                 }
@@ -88,6 +90,11 @@ namespace Orders
             {
 
             }
+        }
+        void imagenClick(object sender, TappedRoutedEventArgs e)
+        {
+            var image = (Image)sender;
+            bigImage.Source = image.Source;
         }
     }
 }
