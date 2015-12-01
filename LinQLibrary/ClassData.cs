@@ -52,5 +52,19 @@ namespace LinQLibrary
             }             
 
         }
+
+       public bool InsertOrder()
+       {
+           test t = new test
+           {
+               id = Guid.NewGuid().ToString(),
+               name = TextBox1.Text,
+               @class = TextBox2.Text
+           };
+           dh.tests.InsertOnSubmit(t);
+           dh.SubmitChanges();
+           gridview();
+
+       } 
     }
 }
