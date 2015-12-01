@@ -5,12 +5,14 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en http://go.microsoft.com/fwlink/?LinkId=391641
@@ -43,6 +45,56 @@ namespace Orders
             // evento Windows.Phone.UI.Input.HardwareButtons.BackPressed.
             // Si usa NavigationHelper, que se proporciona en algunas plantillas,
             // el evento se controla automáticamente.
+        }
+
+        private void image1_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string[] arrayUri = {
+                    "http://img1.wikia.nocookie.net/__cb20120807152321/battlefield/images/4/4e/Bugs_bunny.jpg",
+                    "http://codeworks.it/blog/wp-content/uploads/2014/05/Untitled.png",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                };
+                var x = 0;
+                for (var i = 0; i < 10; i++)
+                {
+                    var uri = arrayUri[i];
+                    Image imagen = new Image
+                    {
+                        Width = 100,
+                        Height = 100,
+                        Margin = new Thickness(x, 0, 0, 0),
+                        Source = new BitmapImage(new Uri(uri, UriKind.Absolute)),
+                        HorizontalAlignment = HorizontalAlignment.Left,
+
+                    };
+                    imagen.Tapped += imagenClick;
+                    grid1.Children.Add(imagen);
+                    x += 105;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        void imagenClick(object sender, TappedRoutedEventArgs e)
+        {
+            var image = (Image)sender;
+            bigImage.Source = image.Source;
         }
     }
 }
